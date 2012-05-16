@@ -17,14 +17,14 @@ all:
             route: income
             text:  See all income
       right:
-        Images:
+        Expenses:
           name:  Expenses
           model: Expense
           method: findLatestQuery
           limit: 5
           route: expense_edit
           global:
-            route: image
+            route: expense
             text:  See all expenses
     menu:
       dashboard:   { name: Dashboard, route: dashboard }
