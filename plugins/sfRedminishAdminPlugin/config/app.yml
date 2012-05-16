@@ -1,0 +1,3 @@
+all:
+  sf_redminish_admin_plugin:
+    web_dir: /sfRedminishAdminPlugin

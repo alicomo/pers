@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="fr" datatype="plaintext" original="messages" date="2010-06-29T17:01:39Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit id="1">
+        <source>Add filter</source>
+        <target>Ajouter un filtre</target>
+      </trans-unit>
+	  <trans-unit id="2">
+        <source>Filters</source>
+        <target>Filtres</target>
+      </trans-unit>
+	  <trans-unit id="3">
+        <source>Created at</source>
+        <target>Date de création</target>
+      </trans-unit>
+	  <trans-unit id="4">
+        <source>Updated at</source>
+        <target>Date de mise à jour</target>
+      </trans-unit>
+	  <trans-unit id="5">
+        <source>Home</source>
+        <target>Accueil</target>
+      </trans-unit>
+	  <trans-unit id="6">
+        <source>Quick Access</source>
+        <target>Accès rapide</target>
+      </trans-unit>
+	  <trans-unit id="7">
+        <source>Tasks</source>
+        <target>Tâches</target>
+      </trans-unit>
+	  <trans-unit id="8">
+        <source>No results</source>
+        <target>Aucun résultat</target>
+      </trans-unit>
+	  <trans-unit id="9">
+        <source>Required.</source>
+        <target>Obligatoire</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

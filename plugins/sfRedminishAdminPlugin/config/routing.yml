@@ -1,0 +1,7 @@
+dashboard:
+  url:   /dashboard
+  param: { module: dashboard, action: index }
+  
+ajax_graph:
+  url:   /ajax/graph
+  param: { module: dashboard, action: graph }

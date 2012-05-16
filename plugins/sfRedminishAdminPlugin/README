@@ -1,0 +1,170 @@
+#sfRedminishAdminPlugin
+
+##Overview
+
+sfRedminishAdminPlugin is an admin generator with a theme based on the one provided by Redmine.
+
+###Requirements:
+
+No requirements but the plugin can automatically detect the presence of the sfDoctrineGuardPlugin in order to
+add some options to the top bar.
+
+**NOTE: Be aware that this plugin must be used with the Doctrine ORM.**
+
+##How to use
+
+###Step 1 - install plugin
+
+Install the plugin, publish the assets and clear the cache.
+
+    $ symfony plugin:install sfRedminishAdminPlugin
+    $ symfony plugin:publish-assets
+    $ symfony cc
+
+(optional) The plugin has two modules (dashboard and adminTask) that you may want to use.
+Those are completely optional but you can activate them by adding the following lines to the application's *settings.yml*
+
+    [php]
+    # in application/config/settings.yml
+    enabled_modules:          [default, dashboard, adminTask]
+
+###Step 2 - setup theme
+
+Nothing fancy here. Just change the default theme parameter in the *generator.yml* of your module.
+
+    [php]
+    # in application/modules/admin_generated_module/config/generator.yml
+    generator:
+      class: sfDoctrineGenerator
+      param:
+        model_class:           Review
+        theme:                 redminish
+        non_verbose_templates: true
+        with_show:             false
+        singular:              ~
+        plural:                ~
+        route_prefix:          review
+        with_doctrine_route:   true
+        actions_base_class:    sfActions
+
+        config:
+          actions: ~
+          fields:  ~
+          list:    ~
+          filter:  ~
+          form:    ~
+          edit:    ~
+          new:     ~
+
+  That's it. Now your module should be set with a brand new functional interface.
+  But you might want to take it to a step further, so let's do this.
+
+###Step 3 (optional) - setup a menu
+
+You can add a basic menu to the admin generator via your application *app.yml*.
+Here is an example :
+
+    [php]
+    # in application/config/app.yml
+    all:
+      sfRedminishAdminPlugin:
+        title: Your project title
+        menu:
+          dashboard:   { name: Dashboard, route: dashboard }
+          gallery:     { name: Galleries, route: gallery }
+          image:       { name: Images, route: image }
+          other_stuff:
+            name:  Other Stuff
+            route: other_stuff
+            submenu:
+              first_stuff:  { name: First Stuff, route: first_stuff }
+              second_stuff: { name: Second Stuff, route: second_stuff }
+
+The title option is not directly linked to the menu part.
+This is just the title that will be displayed on all pages.
+
+The menu option is what's interesting, let's take a look at how it works:
+
+* "other_stuff" (as well as "dashboard" or "gallery") is an arbitrary name, you can write anything you want.
+* the "name" option is the name that will be displayed in the menu.
+* the "route" option is the route to use to generate the link in the menu (This must be a named route, without the @).
+* you can specify a second level menu by adding the submenu "option". The syntax is the same as menu.
+
+The possibility to specify credentials will be added later.
+
+###Step 4 - set up the dashboard
+
+If you activate the dashboard module as explained above, you can customize it in the *app.yml*:
+
+    [php]
+    # in application/config/app.yml
+    all:
+      sfRedminishAdminPlugin:
+        dashboard:
+          left:
+            Galleries:
+              name:   Galleries
+              model:  Gallery
+              method: findLatestQuery
+              limit:  5
+              route:  gallery_edit
+              global:
+                route: gallery
+                text:  See all galleries
+          right:
+            Images:
+              name:  Images
+              model: Image
+              method: findLatestQuery
+              limit: 5
+              route: image_edit
+              global:
+                route: image
+                text:  See all images
+
+The blocks (providing a simple way to make lists of your models) that you want to display can be put either on the left or on the right via the respective options.
+Options available:
+
+* name - the title of the block.
+* model - model of the results you want to retrieve.
+* method (optional) - table method you want to use to retrieve the results (must return a query).
+* limit - number of results you want to display
+* route - the route you want to use to generate the link for each result.
+* global (optional) - this option adds a link at the end of the list with the specified route and text
+
+###Step 5 - configure the tasks
+
+The plugin provides a way to add tasks to the sidebar. You can configure tasks as follows:
+
+    [php]
+    # in application/config/app.yml
+    all:
+      sfRedminishAdminPlugin:
+        tasks:
+          db:
+            name: Database Backup
+            icon: save
+            action: dbBackup
+
+This adds a "db" task to the sidebar with the displayed name "Database backup" and the save icon (there are a few icons already set).
+The "action" option corresponds to an action of the "adminTask" module (therefore you have to activate it).
+The code of an action should look like this (you can look at the one provided by the plugin) :
+
+    [php]
+    public function executeDbBackup(sfWebRequest $request)
+    {
+        $this->task = 'sfDatabaseBackupTask';
+
+        $this->options = array();
+        $this->options['hostname'] = $request->getHost();
+
+        return $this->runTask();
+    }
+
+  The task must be an existing task extending the sfBaseTask class.
+
+###Step 6 (optional) - Extras and experimental features
+
+Experimental features (like graphs for Google Analytics) won't be explained here yet but those interested can take a look at the code.
+
+Feel free to email suggestions/bugs.

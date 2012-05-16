@@ -1,0 +1,33 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  sfRedminishAdminPlugin:
+    title: PERS - YOUR PERSONAL FINANCE MANAGER
+    dashboard:
+      left:
+        Income:
+          name:   Incomes
+          model:  Income
+          method: findLatestQuery
+          limit:  5
+          route:  income_edit
+          global:
+            route: income
+            text:  See all income
+      right:
+        Images:
+          name:  Expenses
+          model: Expense
+          method: findLatestQuery
+          limit: 5
+          route: expense_edit
+          global:
+            route: image
+            text:  See all expenses
+    menu:
+      dashboard:   { name: Dashboard, route: dashboard }
+      income:     { name: Income, route: income }
+      expense:    { name: Expenses, route: expense }
+      recurring_expense: { name: Recurring Expenses, route: recurring_expense }

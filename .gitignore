@@ -1,0 +1,10 @@
+cache/*
+log/*
+nbproject/*
+config/databases.yml
+config/odm.yml
+*.settings
+*.buildpath
+*.project
+*DS_Store
+/plugins/.registry/

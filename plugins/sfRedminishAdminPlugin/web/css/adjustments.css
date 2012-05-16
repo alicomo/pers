@@ -1,0 +1,455 @@
+#main-menu ul li > ul.submenu {
+background: #ffffff;
+position: absolute;
+display: none;
+}
+
+#main-menu ul li > ul.submenu li {
+float: none;
+}
+
+#main-menu ul li > ul.submenu li a,
+#main-menu ul li > ul.submenu li a:visited,
+#main-menu ul li > ul.submenu li a:hover{
+background: #ffffff;
+color: #555555;
+}
+
+#main-menu ul li > ul.submenu li a:hover{
+text-decoration: underline;;
+}
+
+#main-menu ul li:hover > ul.submenu {
+display: block;
+}
+
+a.main_title:hover {
+text-decoration: none;
+}
+
+.content {
+overflow: hidden;
+}
+
+.content ul {
+list-style: none;
+}
+
+.content ul.radio_list {
+padding: 0;
+margin: 0;
+}
+
+.content ul.radio_list li {
+overflow: hidden;
+}
+
+.content ul.radio_list li label{
+float: none;
+}
+
+.content ul.checkbox_list {
+overflow: hidden;
+padding: 0;
+}
+
+.content ul.checkbox_list label{
+width: 0;
+float: none;
+padding: 0;
+font-weight: normal;
+}
+
+.tabular label{
+font-weight: bold;
+float: left;
+text-align: right;
+margin-left: 0px; /*width of left column*/
+padding: 0 10px;
+width: 175px; /*width of labels. Should be smaller than left column to create some right 
+margin*/
+}
+
+form div.sf_admin_text input,
+form div.sf_admin_text textarea,
+div.sf_admin_filter table tr.sf_admin_text input,
+div.sf_admin_filter table tr.sf_admin_text textarea{
+border: 1px solid #bbbbbb;
+width: 209px;
+}
+
+form div.sf_admin_text textarea,
+div.sf_admin_filter table tr.sf_admin_text textarea{
+height: 100px;
+width: 300px;
+display: block;
+}
+
+form div.sf_admin_text input.field-error,
+form div.sf_admin_text textarea.field-error{
+border: 1px solid #dd2222;
+}
+
+form ul.checkbox_list input {
+width: auto;
+}
+
+form .sf_admin_actions {
+margin-bottom: 10px;
+}
+
+form span.required_sign {
+float:left;
+padding: 0 5px 0 0;
+margin-left: -5px;
+}
+
+fieldset.generated_fieldset{
+margin-bottom: 10px;
+}
+
+fieldset.generated_fieldset a{
+outline: none;
+}
+
+fieldset.generated_fieldset h3.error{
+color: #aa0000;
+}
+
+fieldset.generated_fieldset p.error{
+color: #aa0000;
+}
+
+div.fieldset_content .sf_admin_form_row {
+margin-bottom: 5px;
+overflow: hidden;
+}
+
+div.sf_admin_actions div.actions_buttons{
+float: right;
+}
+
+#errorExplanation, div.flash, .nodata, .warning {
+padding: 4px 4px 4px 30px;
+margin-bottom: 12px;
+font-size: 1em;
+border: 1px solid;
+}
+
+div.flash.error.single {
+width: 175px;
+margin-left: 194px;
+}
+
+ul.error_list {
+list-style: square;
+background:#FFE3E3;
+color:#550000;
+padding: 4px 4px 4px 30px;
+margin-bottom: 12px;
+font-size: 1em;
+border: 1px solid #DD0000;
+}
+
+#user_firstname, #user_lastname, #user_mail, #my_account_form select {
+width:auto;
+}
+
+div.help {
+width: auto;
+margin-left: 194px;
+font-style: italic;
+font-size: 0.9em;
+}
+
+fieldset#filters table tr {
+height: 2em;
+}
+
+fieldset#filters table td {
+width: 200px;
+}
+
+.breadcrumb {
+padding: 0 0 10px 0;
+}
+
+tr.sf_admin_row.issue {
+white-space: normal;
+}
+
+/* Dashboard */
+#dashboard-container .box > a,
+#sidebar > a {
+outline: none;
+}
+
+#dashboard-container .box > a,
+#sidebar > a {
+text-decoration: none;
+}
+
+/* Autocomplete */
+div.checkbox_autocomplete {
+padding: 0;
+}
+
+#filters div.checkbox_autocomplete {
+margin-left: 0;
+padding: 0;
+}
+
+#filters div.checkbox_autocomplete ul.checkbox_list {
+list-style: none;
+margin: 0;
+padding: 2px 0;
+}
+
+ul.ui-autocomplete.ui-widget {
+font-size: 1em;
+}
+
+/* AsmSelect */
+.asm-select{
+font-size: 1em;
+}
+
+div.asm_select {
+margin-left: 0;
+padding: 0;
+}
+
+#filters div.asm_select ol.asmList{
+padding: 0;
+}
+
+.asmContainer {
+padding: 0;
+}
+
+.asmContainer ol{
+width: 300px;
+padding: 0;
+}
+
+#filters .asmContainer ol{
+width: auto;
+}
+
+.asmContainer ol li.asmListItem .asmListItemLabel{
+height: auto;
+}
+
+.asmContainer ol .asmListItemLabel{
+padding: 5px 56px 5px 5px;
+}
+
+/* Tasks */
+#sidebar ul#menu-tasks {
+list-style: none;
+padding: 0 0 0 15px;	
+}
+
+#sidebar ul#quick-access {
+list-style: square;	
+padding: 0 0 0 35px;
+}
+
+.ui-widget {
+font-size: 1em;
+}
+
+/* Dialog */
+div#dialog h3
+{
+font-size: 1.3em;
+font-weight: bold;
+padding: 0 0 10px 21px;
+}
+
+div#dialog .section
+{
+font-size: 0.8em;
+padding: 5px 10px;  
+margin: 10px 0 10px 0;
+}
+
+.ui-state-success
+{
+border: 1px solid #dffeb9;
+background: #f1fbe5;
+color: #6a9d1b; 
+}
+
+.ui-state-success h3
+{
+border-color: #9ed04e;
+color: #6a9d1b; 
+}
+
+.ui-icon-success
+{
+background-image: url("/sfRedminishAdminPlugin/css/jquery/images/ui-icons_79b41d_256x240.png");
+background-position: -64px -144px;
+width: 16px;
+height: 16px;   
+}
+
+.ui-state-error h3
+{
+border-color: #ef2c2c;
+color: #cd0a0a; 
+}
+
+.loading
+{
+text-align: center;
+padding: 5px;
+}
+
+div.ui-dialog-content .floatleft
+{
+float: left;
+}
+
+div.ui-dialog-content .content
+{
+overflow: visible;
+}
+
+div.ui-dialog-content .tabular label {
+float: left;
+padding: 0;
+text-align: left;
+}
+
+div.ui-dialog-content .content ul.checkbox_list {
+clear: left;
+}
+
+div.ui-dialog-content .content ul.checkbox_list li label{
+float: none;
+}
+
+div.ui-dialog-content .double_list
+{
+clear: left;
+}
+
+div.ui-dialog-content .help
+{
+margin: 0;
+clear: left;
+width: auto;
+}
+
+div#dialog div.trace,
+div#dialog div.message
+{
+display:none;
+overflow: auto;
+}
+
+div#dialog p.see-trace a
+{
+padding: 10px 0;
+outline: 0;
+text-decoration: underline;
+}
+
+div#dialog p.see-message a
+{
+padding: 10px 0;
+color: #6a9d1b;
+outline: 0;
+text-decoration: underline;
+}
+
+div#dialog div.error p.see-message a
+{
+color: #cd0a0a;
+}
+
+/* Icons */
+.icon-database {
+background-image: url(../images/database_key.png);
+}
+
+.icon-forward {
+background-image: url(../images/forward.png);
+}
+
+.icon-undo {
+background-image: url(../images/undo.png);
+}
+
+.icon-refresh {
+background-image: url(../images/refresh.png);
+}
+
+.icon-web {
+background-image: url(../images/web.png);
+}
+
+.icon-db {
+background-image: url(../images/db.png);
+}
+
+/* selected element */
+.context-menu-selection { background-color:#507AAA !important; color:#f8f8f8 !important; }
+.context-menu-selection a, .context-menu-selection a:hover { color:#f8f8f8 !important; }
+.context-menu-selection:hover { background-color:#507AAA !important; color:#f8f8f8  !important; }
+
+/* Graphs */
+#graphs {
+overflow: hidden;
+}
+
+.graph {
+width: 600px;
+height: auto;
+float:left;
+padding:0 30px 15px 0;
+text-align: center;
+}
+
+img.loading {
+padding: 5px 10px 0 0;	
+}
+
+/* Notifications */
+#notifications {
+position: fixed;
+right: 0;
+top: 0;
+margin: 5px;
+padding: 0 10px;
+background: rgba(0, 0, 0, 0.8);
+width:  250px;
+height: 50px;
+-moz-box-shadow: 0 1px 5px #4D4237;
+-webkit-box-shadow: 0 1px 5px #4D4237;
+box-shadow: 0 1px 5px #4D4237;
+-moz-border-radius: 5px;
+border-radius: 5px;
+color: #FFFFFF;
+font-weight: bold;
+font-style: italic;
+border: 1px #777777 solid;
+}
+
+#notifications.success {
+border: 1px solid #dffeb9;
+background: rgba(119, 172, 5, 0.8);
+color: #6a9d1b; 
+}
+
+/* Corrections related to elRTE editor */
+div.el-rte div.workzone textarea {
+width: 100%;
+border: 0;
+}
+
+div.el-dialogform-content form {
+display: block;
+}

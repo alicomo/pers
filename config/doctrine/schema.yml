@@ -1,0 +1,33 @@
+Expense:
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+    Signable: ~
+  columns:
+    date: { type: date, notnull: true }
+    name: { type: string(255), notnull: true }
+    description: { type: string(1000) }
+    amount: { type: decimal, notnull: true }
+
+RecurringExpense:
+  actAs: 
+    Timestampable: ~
+    SoftDelete: ~
+    Signable: ~
+  columns:
+    date_of_payment: { type: date, notnull: true }
+    name : { type: string(255), notnull: true }
+    description : { type: string(1000) }
+    amount: { type: decimal, notnull: true }
+    recurring_type : { type: enum, values : [daily, weekly, monthly, bi-monthly, quarterly, half-yearly, annually, bi-annually] }
+    
+Income: 
+  actAs:
+    Timestampable: ~
+    SoftDelete: ~
+    Signable: ~
+  columns:
+    date: { type: date, notnull: true }
+    name: { type: string(255), notnull: true }
+    description: { type: string(1000) }
+    amount: { type: decimal, notnull: true }
